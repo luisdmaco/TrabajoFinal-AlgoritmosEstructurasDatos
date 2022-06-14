@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Controladora">
+    <Position X="13" Y="7.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAQAABQCAAAAAEAgAIIgAACAACAAQAAAgAQARAAA=</HashCode>
+      <FileName>Controladora.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="menu" />
+      <Field Name="cuenta" />
+      <Field Name="operacion" />
+      <Field Name="archivos" />
+      <Field Name="ordenar_ingreso" />
+      <Field Name="ordenar_gasto" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Cuenta">
+    <Position X="12.75" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Cuenta.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Archivo">
+    <Position X="19" Y="11.75" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAEIAAAAAAJAAgAwQABAwAAEAEAAAAACGQI=</HashCode>
+      <FileName>Archivos.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="lista_cuenta_ingreso" />
+      <Field Name="lista_monto_ingreso" />
+      <Field Name="lista_categoria_ingreso" />
+      <Field Name="lista_cuenta_gasto" />
+      <Field Name="lista_monto_gasto" />
+      <Field Name="lista_categoria_gasto" />
+      <Field Name="p" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Arreglo&lt;G&gt;" Collapsed="true">
+    <Position X="22.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAABAAIkAAAAAgAAAAAAAAQEAAAAAAgA=</HashCode>
+      <FileName>Arreglo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nodo&lt;Generico&gt;">
+    <Position X="17.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQAAAAAAAAACAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Lista.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lista&lt;Generico&gt;">
+    <Position X="16.5" Y="8" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>gEQIACAAAMAAgAAAgIAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Lista.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="inicio" />
+      <Field Name="fin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Menu">
+    <Position X="21.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAIAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Menu.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="a" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Operacion">
+    <Position X="15" Y="11.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAQAAAEABAAAAAoAIAQAAAAAAAQQAAEAAAIBAAA=</HashCode>
+      <FileName>Operacion.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="archivos" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Pila&lt;Generico&gt;">
+    <Position X="7.5" Y="7" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACABACAAAIMkBAAABgAAAgAgAAQAAAAgEAgA=</HashCode>
+      <FileName>Ordenamiento.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="porcentaje">
+    <Position X="20" Y="16.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AQAEAAAAAEAAAAAAAIAAAAAAAACAIIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Porcentaje.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

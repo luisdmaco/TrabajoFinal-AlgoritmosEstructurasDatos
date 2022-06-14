@@ -1,0 +1,79 @@
+﻿  TP_Galavis, Soto, Torres.cpp
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Porcentaje.h(18,21): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Menu.h(21,17): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Controladora.h(65,13): warning C4129: 'I': unrecognized character escape sequence
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Controladora.h(80,13): warning C4129: 'G': unrecognized character escape sequence
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\type_traits(1595,67): warning C4244: 'argument': conversion from '_Ty1' to 'unsigned short', possible loss of data
+          with
+          [
+              _Ty1=long
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(744): message : see reference to function template instantiation 'void std::invoke<_Callable&,_Ty,>(Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,_Ty1 &&) noexcept(false)' being compiled
+          with
+          [
+              _Callable=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,
+              _Ty=long,
+              _Ty1=long
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(920): message : see reference to function template instantiation 'void std::_Invoker_ret<_Rx,true>::_Call<_Callable&,_Ty>(_Fx,_Ty &&) noexcept(false)' being compiled
+          with
+          [
+              _Rx=void,
+              _Callable=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,
+              _Ty=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c> &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(920): message : see reference to function template instantiation 'void std::_Invoker_ret<_Rx,true>::_Call<_Callable&,_Ty>(_Fx,_Ty &&) noexcept(false)' being compiled
+          with
+          [
+              _Rx=void,
+              _Callable=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,
+              _Ty=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c> &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(919): message : while compiling class template member function '_Rx std::_Func_impl_no_alloc<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,_Rx,Generico>::_Do_call(Generico &&)'
+          with
+          [
+              _Rx=void,
+              Generico=long
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(813): message : see reference to class template instantiation 'std::_Func_impl_no_alloc<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,_Ret,Generico>' being compiled
+          with
+          [
+              _Ret=void,
+              Generico=long
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(1010): message : see reference to variable template 'const bool _Is_large<std::_Func_impl_no_alloc<<lambda_f51598b661a17763ae05b0206949255c>,void,long> >' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(1143): message : see reference to function template instantiation 'void std::_Func_class<_Ret,Generico>::_Reset<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=void,
+              Generico=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\functional(1143): message : see reference to function template instantiation 'void std::_Func_class<_Ret,Generico>::_Reset<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=void,
+              Generico=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>
+          ]
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Controladora.h(84): message : see reference to function template instantiation 'std::function<void (Generico)>::function<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,0>(_Fx)' being compiled
+          with
+          [
+              Generico=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>
+          ]
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Controladora.h(84): message : see reference to function template instantiation 'std::function<void (Generico)>::function<Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>,0>(_Fx)' being compiled
+          with
+          [
+              Generico=long,
+              _Fx=Controladora::mostrar_menu::<lambda_f51598b661a17763ae05b0206949255c>
+          ]
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Lista.h(62): warning C4715: 'Lista<long>::es_vacia': not all control paths return a value
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Lista.h(62): warning C4715: 'Lista<unsigned short>::es_vacia': not all control paths return a value
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Cuenta.h(33): warning C4715: 'Cuenta::elegir_cuenta': not all control paths return a value
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Operacion.h(41): warning C4715: 'Operacion::elegir_operacion': not all control paths return a value
+C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\TP_Galavis, Soto, Torres\Controladora.h(167): warning C4717: 'Controladora::mostrar_menu': recursive on all control paths, function will cause runtime stack overflow
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  TP_Galavis, Soto, Torres.vcxproj -> C:\Users\Alan Galavis\source\repos\TP_Galavis, Soto, Torres\Debug\TP_Galavis, Soto, Torres.exe
