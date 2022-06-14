@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <functional>
 
@@ -17,8 +16,20 @@ public:
 
 	Arreglo(unsigned long size = 5, long id = -1) :size(size), id(id) { arr = new G[size]; }
 
+	/*
 	void push_back(G v) { 
 		arr[++id] = v; 
+	}
+	*/
+
+	bool push_back(G v) {
+		if (v != nullptr) {
+			arr[++id] = v;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	void push_front(G v) {
@@ -28,9 +39,19 @@ public:
 		}
 		arr[0] = v;
 	}
-
+	/*
 	void pop_back() {
 		size--;
+	}*/
+
+	bool pop_back() {
+		if (arr != nullptr) {
+			size--;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	void swap(G* a, G* b) {

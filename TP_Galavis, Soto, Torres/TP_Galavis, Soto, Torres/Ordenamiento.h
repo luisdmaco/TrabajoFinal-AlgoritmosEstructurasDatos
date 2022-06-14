@@ -152,6 +152,7 @@ public:
 		return gap;
 	}
 
+	//fuera del curso
 	void combSort_MayorMenor(function<bool(Generico, Generico)> func) {
 		int gap = id;
 		bool swapped = true;
@@ -166,7 +167,7 @@ public:
 			}
 		}
 	}
-
+	//fuera del curso
 	void combSort_MenorMayor(function<bool(Generico, Generico)> func) {
 		int gap = id;
 		bool swapped = true;
