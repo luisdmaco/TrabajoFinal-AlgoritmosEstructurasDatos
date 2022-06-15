@@ -41,7 +41,32 @@ public:
 		}
 	}
 
-	void print_porcentajes(double arr, int i) {
-		cout << i + 1 << ". " << arr << " %" << endl;
+	void print_porcentajes(double num, int i) {
+		if (esVacio() == false)
+		{
+			cout << i + 1 << ". " << num << " %" << endl;
+		}
+		else
+		{
+			cout << i + 1 << ". 0%" << endl;
+		}
+	}
+	bool esVacio() {
+		int cont = 0;
+		for (size_t i = 0; i < 6; i++)
+		{
+			if (Arr[i] == 0)
+			{
+				cont++;
+			}
+		}
+		if (cont == 6)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 };

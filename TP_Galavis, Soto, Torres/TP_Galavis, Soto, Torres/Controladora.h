@@ -14,8 +14,8 @@ private:
 	Operacion* operacion = new Operacion;
 	Archivo* archivos = new Archivo;
 
-	Pila<unsigned short> ordenar_ingreso;
-	Pila<unsigned short> ordenar_gasto;
+	//Pila<unsigned short> ordenar_ingreso;
+	//Pila<unsigned short> ordenar_gasto;
 
 	unsigned short tipo_cuenta;
 	unsigned short tipo_operacion;

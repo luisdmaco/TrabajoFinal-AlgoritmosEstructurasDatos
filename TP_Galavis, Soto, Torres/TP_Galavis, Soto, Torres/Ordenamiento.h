@@ -29,13 +29,11 @@ public:
 	~porcentaje() {}
 
 	void asignar_Monto(unsigned int categoria, unsigned int sum_Monto_Tipo) {
-
 		vector[categoria - 1] = sum_Monto_Tipo;
 	}
 	void porcentificar(unsigned int Sum_total) {
 		for (size_t i = 0; i <= size; i++) {
-
-			por[i] += por->get_pos(i) + (vector->get_pos(i) * 100) / Sum_total;
+			por[i] = (vector->get_pos(i) * 100) / double(Sum_total);
 			print_porcentajes(por->get_pos(i), i);
 		}
 		for (size_t i = 0; i <= size; i++) {
