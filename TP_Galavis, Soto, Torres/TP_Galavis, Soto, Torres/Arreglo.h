@@ -23,7 +23,7 @@ public:
 	*/
 
 	bool push_back(G v) {
-		if (v != nullptr) {
+		if (v != NULL) {
 			arr[++id] = v;
 			return true;
 		}
