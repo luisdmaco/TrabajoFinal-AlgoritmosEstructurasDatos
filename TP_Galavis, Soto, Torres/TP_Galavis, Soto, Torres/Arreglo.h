@@ -25,11 +25,6 @@ public:
 	Generico* get_arreglo() {
 		return arreglo;
 	}
-
-	void push_back(Generico v) {
-		arreglo[++posfinal] = v;
-	}
-
 	void push_front(Generico v) {
 		Generico* auxiliar = new Generico[posfinal + 1];
 		++posfinal;
@@ -39,22 +34,14 @@ public:
 		auxiliar[0] = v;
 		arreglo = auxiliar;
 	}
-
-	void pop_back() {
-		if (posfinal >= 1) {
-			Generico* auxiliar = new Generico[posfinal - 1];
-			for (size_t i = 0; i < posfinal; i++) {
-				auxiliar[i] = arreglo[i];
+	void pop_at(int position){
+		for (size_t i = 0; i < posfinal; i++) {
+			if (position <= i){
+				arreglo[i] = arreglo[i+1];
 			}
-			arreglo = auxiliar;
-			--posfinal;
 		}
-		else {
-			arreglo[0] = NULL;
-			posfinal = -1;
-		}
+		pop_front();
 	}
-
 	void pop_front() {
 		if (posfinal >= 1) {
 			Generico* auxiliar = new Generico[posfinal - 1];
@@ -69,30 +56,34 @@ public:
 			posfinal = -1;
 		}
 	}
-
+	void pop_back() {
+		if (posfinal >= 1) {
+			Generico* auxiliar = new Generico[posfinal - 1];
+			for (size_t i = 0; i < posfinal; i++) {
+				auxiliar[i] = arreglo[i];
+			}
+			arreglo = auxiliar;
+			--posfinal;
+		}
+		else {
+			arreglo[0] = NULL;
+			posfinal = -1;
+		}
+	}
+	void change_at(int i, int nuevoDato){
+		arreglo[i] = dato;
+	}
 	void empty() {
 		while (posfinal >= 0) {
 			pop_back();
 		}
 	}
-
+	bool is_empty(){
+		return tamaño == 0;
+	}
 	long get_size() {
 		return posfinal + 1;
 	}
-
-	void swap(Generico* a, Generico* b) {
-		Generico temp = *a;
-		*a = *b;
-		*b = temp;
-	}
-
-	void randomize() {
-		for (int i = posfinal - 1; i > 0; i--) {
-			int j = rand() % (i + 1);
-			swap(&arreglo[i], &arreglo[j]);
-		}
-	}
-
 	//Iterar = Recorrer la funcion mediante un for, y realizar alguna operación mediante un lambda
 	void iterate(function<void(Generico)> func) {
 		for (int i = 0; i <= posfinal; i++) {
