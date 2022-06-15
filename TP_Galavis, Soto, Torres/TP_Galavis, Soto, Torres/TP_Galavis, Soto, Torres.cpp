@@ -7,7 +7,7 @@
 
 using namespace std;
 using namespace System;
-//casa sola
+//pito simple
 int main() {
 	Controladora* controladora = new Controladora;
 
