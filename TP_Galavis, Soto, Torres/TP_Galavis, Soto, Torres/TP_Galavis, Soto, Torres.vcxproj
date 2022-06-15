@@ -126,10 +126,12 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arbol.h" />
     <ClInclude Include="Archivos.h" />
     <ClInclude Include="Arreglo.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Cuenta.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Operacion.h" />

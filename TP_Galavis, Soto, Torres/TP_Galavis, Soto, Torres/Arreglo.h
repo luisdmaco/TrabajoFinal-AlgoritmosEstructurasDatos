@@ -1,75 +1,104 @@
 #pragma once
+
 #include <iostream>
 #include <functional>
 
-using namespace std;
-
-template<typename G>
+template<class Generico>
 
 class Arreglo {
-
-	G* arr;
-	long id;
-	unsigned long size;
+private:
+	Generico* arreglo;
+	long posfinal;
+	unsigned long tamaño;
 
 public:
 
-	Arreglo(unsigned long size = 5, long id = -1) :size(size), id(id) { arr = new G[size]; }
+	Arreglo() {}
 
-	/*
-	void push_back(G v) { 
-		arr[++id] = v; 
-	}
-	*/
-
-	int get_pos(int pos) {
-		return arr[pos];
+	Arreglo(unsigned long size) {
+		posfinal = -1;
+		arreglo = new Generico[size];
 	}
 
-	bool push_back(G v) {
-		if (v != NULL) {
-			arr[++id] = v;
-			return true;
+	~Arreglo() {}
+
+	Generico* get_arreglo() {
+		return arreglo;
+	}
+
+	void push_back(Generico v) {
+		arreglo[++posfinal] = v;
+	}
+
+	void push_front(Generico v) {
+		Generico* auxiliar = new Generico[posfinal + 1];
+		++posfinal;
+		for (size_t i = 0; i < posfinal; i++) {
+			auxiliar[i + 1] = arreglo[i];
 		}
-		else {
-			return false;
-		}
+		auxiliar[0] = v;
+		arreglo = auxiliar;
 	}
 
-	void push_front(G v) {
-		G aux = new G[size + 1];
-		for (unsigned long i = 0; i < size; i++) {
-			aux[i] = arr[i + 1];
-		}
-		arr[0] = v;
-	}
-	/*
 	void pop_back() {
-		size--;
-	}*/
-
-	bool pop_back() {
-		if (arr != nullptr) {
-			size--;
-			return true;
+		if (posfinal >= 1) {
+			Generico* auxiliar = new Generico[posfinal - 1];
+			for (size_t i = 0; i < posfinal; i++) {
+				auxiliar[i] = arreglo[i];
+			}
+			arreglo = auxiliar;
+			--posfinal;
 		}
 		else {
-			return false;
+			arreglo[0] = NULL;
+			posfinal = -1;
 		}
 	}
 
-	void swap(G* a, G* b) {
-		G temp = *a;
+	void pop_front() {
+		if (posfinal >= 1) {
+			Generico* auxiliar = new Generico[posfinal - 1];
+			for (size_t i = 0; i < posfinal; i++) {
+				auxiliar[i] = arreglo[i + 1];
+			}
+			arreglo = auxiliar;
+			--posfinal;
+		}
+		else {
+			arreglo[0] = NULL;
+			posfinal = -1;
+		}
+	}
+
+	void empty() {
+		while (posfinal >= 0) {
+			pop_back();
+		}
+	}
+
+	long get_size() {
+		return posfinal + 1;
+	}
+
+	void swap(Generico* a, Generico* b) {
+		Generico temp = *a;
 		*a = *b;
 		*b = temp;
 	}
 
-	void iterate(function<void(G)> func) {
-		for (int i = 0; i <= id; i++)
-			func(arr[i]);
+	void randomize() {
+		for (int i = posfinal - 1; i > 0; i--) {
+			int j = rand() % (i + 1);
+			swap(&arreglo[i], &arreglo[j]);
+		}
 	}
-	void set_arreglo(double dato, int i) {
-		arr[i] = dato;
+
+	//Iterar = Recorrer la funcion mediante un for, y realizar alguna operación mediante un lambda
+	void iterate(function<void(Generico)> func) {
+		for (int i = 0; i <= posfinal; i++) {
+			func(arreglo[i]);
+		}
 	}
 
 };
+
