@@ -68,5 +68,8 @@ public:
 		for (int i = 0; i <= id; i++)
 			func(arr[i]);
 	}
+	void set_arreglo(double dato, int i) {
+		arr[i] = dato;
+	}
 
 };

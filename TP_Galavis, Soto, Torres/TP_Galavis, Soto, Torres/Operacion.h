@@ -107,14 +107,9 @@ public:
 		cout << "   4. Ordenar segun el tipo de cuenta de manera ascendente" << endl;
 		cout << "   5. Ordenar segun la categoria de manera descendente" << endl;
 		cout << "   6. Ordenar segun la categoria de manera ascendente" << endl;
-
 		do {
 			cin >> operacion;
 		} while (operacion < 1 || operacion > 6);
-
 		return operacion;
 	}
-
-	
-
 };
