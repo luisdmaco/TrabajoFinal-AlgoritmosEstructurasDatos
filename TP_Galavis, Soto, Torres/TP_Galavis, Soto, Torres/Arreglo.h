@@ -22,6 +22,10 @@ public:
 	}
 	*/
 
+	int get_pos(int pos) {
+		return arr[pos];
+	}
+
 	bool push_back(G v) {
 		if (v != NULL) {
 			arr[++id] = v;
