@@ -7,7 +7,7 @@
 
 using namespace std;
 using namespace System;
-//jeje
+//holi
 int main() {
 	Controladora* controladora = new Controladora;
 
