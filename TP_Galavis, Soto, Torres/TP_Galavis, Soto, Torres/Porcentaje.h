@@ -20,7 +20,7 @@ public:
 			Por[i] = 0;
 		}
 	}
-
+	
 	~porcentaje(){
 		delete Arr;
 		delete Por;
