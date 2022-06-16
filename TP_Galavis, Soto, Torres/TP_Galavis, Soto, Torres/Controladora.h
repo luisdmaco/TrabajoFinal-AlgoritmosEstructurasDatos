@@ -18,7 +18,7 @@ private:
 public:
 	Controladora(){}
 	~Controladora(){}
-
+	//recursividad pendiente
 	void mostrar_menu() {
 
 		menu->imprimir_menu();

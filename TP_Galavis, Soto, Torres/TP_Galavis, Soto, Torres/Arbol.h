@@ -105,3 +105,4 @@ public:
 		return _altura(raiz);
 	}
 };
+//arbol terminado (eso creo) falta implementar

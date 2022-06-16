@@ -1,5 +1,4 @@
 #pragma once
-
 #include <cstdlib>//srand
 #include <cstdio>//printf
 #include <iostream>
