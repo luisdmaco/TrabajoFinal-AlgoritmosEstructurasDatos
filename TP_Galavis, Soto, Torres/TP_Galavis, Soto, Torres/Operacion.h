@@ -2,6 +2,7 @@
 #include <iostream>
 //#include "Archivos.h"
 
+
 using namespace std;
 using namespace System;
 
@@ -54,6 +55,9 @@ public:
 		cout << "   1. Ahorro" << endl;
 		cout << "   2. Deposito" << endl;
 		cout << "   3. Salario" << endl;
+
+		//Saludos Soto
+
 
 		do {
 			cin >> categoria;
