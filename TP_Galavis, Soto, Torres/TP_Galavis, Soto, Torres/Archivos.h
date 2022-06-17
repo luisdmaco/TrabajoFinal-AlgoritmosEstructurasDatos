@@ -3,7 +3,7 @@
 #include <fstream>
 #include "Lista.h"
 #include "Arreglo.h"
-
+#include "HashTable.h"
 using namespace std;
 
 class Archivos
@@ -16,6 +16,8 @@ private:
 	Lista<unsigned short> Lcuenta_gasto;
 	Lista<long> Lmonto_gasto;
 	Lista<unsigned short> Lcategoria_gasto;
+
+	HT<int> ht_etiqueta;
 public:
 	Archivos(){}
 	~Archivos(){}
