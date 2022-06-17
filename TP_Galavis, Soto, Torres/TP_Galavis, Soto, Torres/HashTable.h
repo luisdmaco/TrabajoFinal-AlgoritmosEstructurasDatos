@@ -4,19 +4,19 @@
 #include<list>
 using namespace std;
 //cambiar y poner función hash
-template <typename Generico>
+template <typename G>
 class HashEntidad {
 private:
 	string key;
-	Generico value;
-	friend class HT<Generico>;
+	G value;
+	friend class HT<G>;
 public:
-	HashEntidad(string key, Generico value) {
+	HashEntidad(string key, G value) {
 		this->key = key;
 		this->value = value;
 	}
 	string getKey() { return key; }
-	Generico getValue() { return value; }
+	G getValue() { return value; }
 };
 /*
 class HashTabla {
@@ -86,7 +86,7 @@ public:
 };
 */
 template<class G>
-class HT {
+class HashTabla {
 	array<list<HashEntidad<G>>, 10> tabla;
 	function<void(G)> print_conditions;
 	int size = 20; //tamaño del arr

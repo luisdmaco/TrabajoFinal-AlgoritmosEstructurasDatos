@@ -16,7 +16,7 @@ private:
 	Lista<long> Lmonto_gasto;
 	Lista<unsigned short> Lcategoria_gasto;
 
-	HT<int> ht_etiqueta;
+	hashTabla;
 public:
 	Archivos(){}
 	~Archivos(){}
