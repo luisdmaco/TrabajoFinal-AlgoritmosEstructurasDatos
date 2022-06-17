@@ -62,6 +62,9 @@
     <ClInclude Include="Etiqueta.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Reference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TP_Galavis, Soto, Torres.cpp">

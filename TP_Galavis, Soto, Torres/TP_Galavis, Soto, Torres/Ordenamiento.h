@@ -1,19 +1,6 @@
 #pragma once
 
-#include <cstdlib>//srand
-#include <cstdio>//printf
-#include <iostream>
-#include <functional>
-#include <vector>
-#include <iterator>//libreria para Ordenamiento Tipo STL
-#include <algorithm>//libreria para Ordenamiento Tipo STL
-
-using namespace std;
-using std::function;
-using std::cin;
-
 template <class Generico>
-
 class Pila {
 private:
 	Generico* arr;

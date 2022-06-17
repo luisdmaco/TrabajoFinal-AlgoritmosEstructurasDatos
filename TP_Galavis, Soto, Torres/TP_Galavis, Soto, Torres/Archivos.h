@@ -1,13 +1,9 @@
 #pragma once
-#include <iostream>
-#include <fstream>
+
 #include "Lista.h"
 #include "Arreglo.h"
 
-using namespace std;
-
-class Archivos
-{
+class Archivos {
 private:
 	Lista<unsigned short> Lcuenta_ingreso;
 	Lista<long> Lmonto_ingreso;
