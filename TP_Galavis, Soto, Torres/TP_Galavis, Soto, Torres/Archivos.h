@@ -6,8 +6,7 @@
 #include "HashTable.h"
 using namespace std;
 
-class Archivos
-{
+class Archivos {
 private:
 	Lista<unsigned short> Lcuenta_ingreso;
 	Lista<long> Lmonto_ingreso;
