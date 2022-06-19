@@ -42,6 +42,7 @@ public:
 		}
 		return vector_monto_ingreso;
 	}
+	
 	void lectura_ingreso() {
 		ifstream file;
 
