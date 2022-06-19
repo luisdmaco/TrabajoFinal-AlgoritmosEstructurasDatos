@@ -6,7 +6,7 @@ class Nodo {
 private:
 	Generico e;
 	Nodo<Generico>* sig;
-
+	friend class Lista;
 public:
 
 	Nodo() {}
@@ -34,7 +34,7 @@ public:
 };
 
 template<class Generico>
-class Lista : public Nodo<Generico> {
+class Lista {
 private:
 	Nodo<Generico>* inicio;
 	size_t tamaño;

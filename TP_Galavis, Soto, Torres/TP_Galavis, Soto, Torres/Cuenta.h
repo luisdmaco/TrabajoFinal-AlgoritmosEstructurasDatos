@@ -25,7 +25,7 @@ public:
 
 		if (tipo_cuenta < 1 || tipo_cuenta > 2) {
 			elegir_cuenta();
-		}
+		}//...recursividad
 
 		else {
 			return tipo_cuenta;

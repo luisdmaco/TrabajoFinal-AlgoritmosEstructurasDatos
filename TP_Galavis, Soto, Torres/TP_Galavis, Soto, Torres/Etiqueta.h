@@ -20,4 +20,6 @@ public:
 		}
 		return texto;
 	}
+	//cambios getetiqueta
+	string getEtiqueta() { return texto; }
 };

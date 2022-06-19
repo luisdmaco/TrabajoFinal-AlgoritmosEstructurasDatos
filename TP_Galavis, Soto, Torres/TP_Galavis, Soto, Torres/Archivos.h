@@ -38,8 +38,8 @@ public:
 		string skipline;
 		if (file.is_open()) {
 			getline(file, skipline);
-			while (!file.eof()) {
-				getline(file, Cuenta); cuenta = stoi(Cuenta);
+			while (!file.eof()) { //end of file
+				getline(file, Cuenta); cuenta = stoi(Cuenta);//string to int
 				getline(file, Etiqueta);
 				getline(file, Moneda); moneda = stoi(Moneda);
 				getline(file, Monto); monto = stoi(Monto);
