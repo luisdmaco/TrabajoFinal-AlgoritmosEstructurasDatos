@@ -9,7 +9,7 @@ class HashEntidad {
 private:
 	string key;
 	G value;
-	friend class HT<G>;
+	friend class HashTabla<G>; //en observación
 public:
 	HashEntidad(string key, G value) {
 		this->key = key;
@@ -89,9 +89,11 @@ template<class G>
 class HashTabla {
 	array<list<HashEntidad<G>>, 10> tabla;
 	function<void(G)> print_conditions;
-	int size = 20; //tamaño del arr
+	int size = 10; //tamaño del arr
 	int numElm = 0; //numero de elementos
 public:
+	HashTabla(){}
+	~HashTabla(){}
 	void lambda_initializers(function<void(G)> print_conditions){ //inicializar antes de que
 		this->print_conditions = print_conditions;                //usemos el hashtable, porque no es
 	}															  //un puntero que se inicializa
