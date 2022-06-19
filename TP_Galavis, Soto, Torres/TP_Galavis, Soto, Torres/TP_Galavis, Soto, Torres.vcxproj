@@ -126,11 +126,12 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Arbol.h" />
+    <ClInclude Include="-Arbol.h" />
     <ClInclude Include="Archivos.h" />
     <ClInclude Include="Arreglo.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Cuenta.h" />
+    <ClInclude Include="Dataset.h" />
     <ClInclude Include="Etiqueta.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Lista.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Ordenamiento.h" />
     <ClInclude Include="Porcentaje.h" />
     <ClInclude Include="Reference.h" />
+    <ClInclude Include="Registro.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>

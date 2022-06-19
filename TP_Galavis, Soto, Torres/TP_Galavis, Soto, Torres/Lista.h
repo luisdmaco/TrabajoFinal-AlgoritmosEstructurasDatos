@@ -1,12 +1,8 @@
 #pragma once
-#include <iostream>
 
-using namespace std;
-using namespace System;
 
 template<class Generico>
 class Nodo {
-
 private:
 	Generico e;
 	Nodo<Generico>* sig;
@@ -69,10 +65,10 @@ public:
 	}
 
 	void Modify_Position(Generico e, unsigned short pos) {
-		if (pos > tamaño) {
+		if ([]() {return pos > tamaño; }()) {
 			return;
 		}
-		if (pos == tamaño) {
+		if ([]() {return pos == tamaño; }()) {
 			Modify_End(e);
 		}
 		else {
@@ -86,10 +82,10 @@ public:
 	}
 
 	void pop_at(int pos) {
-		if (pos > tamaño - 1) {
+		if ([]() {return pos > tamaño - 1; }()) {
 			return;
 		}
-		if (pos == 0) {
+		if ([]() {return pos == 0; }()) {
 			pop_front();
 		}
 		else {
@@ -125,7 +121,7 @@ public:
 
 	void push_front(Generico e) {
 		Nodo<Generico>* n = new Nodo<Generico>(e);
-		if (tamaño == 0) {
+		if ([]() {return tamaño == 0; }()) {
 			inicio = n;
 		}
 		else {

@@ -31,60 +31,33 @@ public:
 		return true;
 	}
 
-
 	void eliminar_monto(int monto) {
 		bool k = true;
-		if (posfinal >= 1) {
-			Generico* auxiliar = new Generico[posfinal - 1];
-			for (size_t i = 0; i < posfinal; i++) {
-				if (monto == arreglo[i]) {
+		if ([=]() {return tamaño >= 1; }()) {
+			Generico* auxiliar = new Generico[tamaño - 1];
+			for (size_t i = 0; i < tamaño; i++) {
+				if (monto == tamaño[i]) {
 					k = false;
 				}
 				if (k) {
-					auxiliar[i] = arreglo[i];
+					auxiliar[i] = tamaño[i];
 				}
 				else {
-					auxiliar[i] = arreglo[i + 1];
+					auxiliar[i] = tamaño[i + 1];
 				}
 
 			}
 			arreglo = auxiliar;
-			--posfinal;
-		}
-
-		else {
-			arreglo[0] = NULL;
-			posfinal = -1;
-		}
-	}
-	void eliminar_monto(int monto) {
-		bool k = true;
-		if (posfinal >= 1) {
-			Generico* auxiliar = new Generico[posfinal - 1];
-			for (size_t i = 0; i < posfinal; i++) {
-				if (monto == arreglo[i]) {
-					k = false;
-				}
-				if (k) {
-					auxiliar[i] = arreglo[i];
-				}
-				else {
-					auxiliar[i] = arreglo[i + 1];
-				}
-
-			}
-			arreglo = auxiliar;
-			--posfinal;
+			--tamaño;
 		}
 		else {
 			arreglo[0] = NULL;
 			posfinal = -1;
 		}
 	}
-
 
 	void pop_front() {
-		if (tamaño >= 1) {
+		if ([=]() {return tamaño >= 1; }()) {
 			Generico* auxiliar = new Generico[tamaño - 1];
 			for (size_t i = 0; i < tamaño; i++) {
 				auxiliar[i] = arreglo[i + 1];
@@ -115,7 +88,7 @@ public:
 	}
 
 	void empty() {
-		while (tamaño >= 0) {
+		while ([=]() {return tamaño >= 0; }()) {
 			pop_back();
 		}
 	}

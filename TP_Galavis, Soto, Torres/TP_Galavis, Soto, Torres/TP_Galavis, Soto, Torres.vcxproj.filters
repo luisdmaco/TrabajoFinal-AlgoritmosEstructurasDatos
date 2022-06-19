@@ -56,13 +56,19 @@
     <ClInclude Include="HashTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Arbol.h">
+    <ClInclude Include="-Arbol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Etiqueta.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Reference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Registro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dataset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

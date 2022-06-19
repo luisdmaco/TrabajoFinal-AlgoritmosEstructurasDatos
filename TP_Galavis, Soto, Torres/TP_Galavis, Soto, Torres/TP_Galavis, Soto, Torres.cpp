@@ -1,27 +1,30 @@
 #include "pch.h"
+#include<iostream>
+#include<functional>
+#include<vector>
+#include <fstream>
+#include<string>
 
-#include "Reference.h"
 #include "Controladora.h"
-
-#include "Arreglo.h"
 
 using namespace std;
 using namespace System;
 
+//Hash
+//Nueva estructura 1                                                :     Falta implementar
+//Nueva estructura 2                                                :     Falta implementar
+//Nueva estructura 3                                                :     Falta buscar e implementar
+//Dividirlo en 15 clases                                            :     11/15
+	//Busqueda por etiqueta											     
+	//Convertir dolares a soles										     
+//Cumplir con 5 atributos por clase									     
+//Cumplir con 3 metodos por integtante por estructura de datos      :     Arbol: 6/9, Hash: ?/9
+//Ordenamiento
+//Video exposicion
+//Word (Big O, Diagrama de Clases, Descripcion del caso y de los algoritmos principales, etc)
+
 int main() {
-
-	Arreglo<int>* arr = new Arreglo<int>(10);
-
-	arr->push_front(10);
-	arr->push_front(20);
-	arr->iterate([](int v) { cout << "[" << v << "] "; });
-	arr->pop_back();
-	cout << endl;
-	arr->iterate([](int v) { cout << "[" << v << "] "; });
-
-	//Controladora* controladora = new Controladora;
-
-	//controladora->mostrar_menu();
-	cin.get();
+	Controladora* controller = new Controladora;
+	controller->run();
 	return 0;
 }

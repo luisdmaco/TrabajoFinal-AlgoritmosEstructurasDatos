@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
-using namespace std;
+
 //cambiar y poner función hash
+
 template <typename Generico>
 class HashEntidad {
 private:

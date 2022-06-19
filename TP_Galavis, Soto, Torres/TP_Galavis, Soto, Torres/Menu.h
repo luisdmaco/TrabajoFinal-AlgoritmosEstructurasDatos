@@ -1,6 +1,7 @@
 #pragma once
-
 #define color Console::ForegroundColor
+using namespace std;
+using namespace System;
 
 class Menu {
 private:
@@ -9,7 +10,7 @@ public:
 	Menu() {}
 	~Menu() {}
 
-	void imprimir_menu() {
+	void menu() {
 		system("cls");
 		time_t tAct = time(NULL);
 		char* fecha = asctime(localtime(&tAct));
