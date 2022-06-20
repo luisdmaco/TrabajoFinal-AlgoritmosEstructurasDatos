@@ -23,4 +23,6 @@ public:
 			return "null";
 		}
 	}
+
+	int getOpt() { return opt; }
 };

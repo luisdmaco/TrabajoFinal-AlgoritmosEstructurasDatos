@@ -38,7 +38,7 @@ public:
 		}
 		return sum % 10;
 	}
-	int insert(string key, int value){
+	void insert(string key, int value){
 		tabla[getIndex(key)].push_back(HashEntidad<G>(key, value));
 		numElm++;
 	}
@@ -51,14 +51,13 @@ public:
 			cout << endl;
 		}
 	} //set print_conditions como atributo para usarlo en toda la clase (IMPORTANTE)
-	int buscar(string key) { //no probado pero teoricamente está bien
+	void buscar(string key) { //no probado pero teoricamente está bien
 		for (size_t i = 0; i < tabla.size(); ++i) {
 			for (auto it : tabla[i]) {
-				if (it.key == key) { cout << print_conditions(it.value) << " - "; }
+				if (it.getKey() == key) { print_conditions(it.getValue()); cout << " - "; }
 			}
 		}
 	}
-
 	int get_tamano() { return tamano; }
 	int getNumElm() { return numElm; }
 	//TO-DO: función eliminar

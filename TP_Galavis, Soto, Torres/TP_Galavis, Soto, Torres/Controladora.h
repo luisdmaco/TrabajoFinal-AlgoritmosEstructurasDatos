@@ -27,6 +27,7 @@ private:
 	int cuenta, moneda, categoria;
 	long long monto;
 	string etiqueta;
+	string opteti;
 
 public:
 	Controladora() {}
@@ -59,6 +60,9 @@ public:
 			cout << "   3. Salario" << endl;
 			do { cin >> categoria; } while (categoria < 1 || categoria > 3);
 			archivos->escritura(1, cuenta, etiqueta, moneda, monto, categoria);
+			if (etiqueta_obj->getOpt() == 1) {
+				archivos->hashEtiquetas_insert(etiqueta, monto, 1);
+			}
 			break;
 		case 2: //Agregar gasto
 			cuenta = cuenta_obj->elegir_cuenta();
@@ -78,6 +82,9 @@ public:
 			cout << "   7. Facturas" << endl;
 			do { cin >> categoria; } while (categoria < 1 || categoria > 7);
 			archivos->escritura(2, cuenta, etiqueta, moneda, monto, categoria);
+			if (etiqueta_obj->getOpt() == 1) {
+				archivos->hashEtiquetas_insert(etiqueta, monto, 2);
+			}
 			break;
 		case 3: //Mostrar registro
 			cout << "\nIngrese el tipo de transaccion que desea  Ingreso (1) Gasto (2): ";
@@ -105,6 +112,12 @@ public:
 			archivos->imprimir_ordenar();
 			break;
 		case 6: //Buscar por etiqueta
+			
+			cout << "\nIngrese la etiqueta a buscar (Ingreso: 1, Gasto: 2): ";
+			do { cin >> opt; } while (opt < 1 || opt > 2);
+			cout << "\nEscriba el nombre de la etiqueta a buscar: ";
+			cin >> opteti;
+			archivos->hashEtiquetas_buscar(opteti, opt);
 			break;
 		case 7: //Borrar
 			archivos->borrar_datos();

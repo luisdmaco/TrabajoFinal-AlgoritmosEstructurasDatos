@@ -19,7 +19,8 @@ private:
 	vector<Registro> registros;
 	Porcentaje* porcentaje = new Porcentaje;
 	Ordenamiento<int>* ordenamiento = new Ordenamiento<int>;
-	HashTablita<int> hash;
+	HashTablita<int> hashEtiquetasIng;
+	HashTablita<int> hashEtiquetasGst;
 
 	int n;
 	string Cuenta, Etiqueta, Moneda, Monto, Categoria;
@@ -172,5 +173,29 @@ public:
 		for (size_t i = 0; i < registros.size(); i++) {
 			arbolRegistros->insert(registros[i]);
 		}
+	}
+
+	//ht
+
+	bool hashEtiquetas_insert(string key, int value, int opt) {
+		if (opt == 1) {
+			hashEtiquetasIng.insert(key, value);
+			return true;
+		}if (opt == 2) {
+			hashEtiquetasGst.insert(key, value);
+			return true;
+		}
+		return false;
+	}
+
+	bool hashEtiquetas_buscar(string key, int opt) {
+		if (opt == 1) {
+			hashEtiquetasIng.buscar(key);
+			return true;
+		}if (opt == 2) {
+			hashEtiquetasGst.buscar(key);
+			return true;
+		}
+		return false;
 	}
 };
