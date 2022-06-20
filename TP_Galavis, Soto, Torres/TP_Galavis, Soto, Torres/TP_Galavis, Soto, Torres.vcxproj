@@ -127,14 +127,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="-Arbol.h" />
+    <ClInclude Include="-KDTree.h" />
+    <ClInclude Include="-RBTree.h" />
     <ClInclude Include="Archivos.h" />
     <ClInclude Include="Arreglo.h" />
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Convertir.h" />
     <ClInclude Include="Cuenta.h" />
     <ClInclude Include="Dataset.h" />
     <ClInclude Include="Etiqueta.h" />
+    <ClInclude Include="-Grafo.h" />
     <ClInclude Include="HashTable.h" />
-    <ClInclude Include="Lista.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Operacion.h" />
     <ClInclude Include="pch.h" />

@@ -4,96 +4,30 @@
 #include<list>
 using namespace std;
 //cambiar y poner función hash
-template <typename G>
+template <typename T>
 class HashEntidad {
 private:
 	string key;
-	G value;
-	friend class HashTabla<G>; //en observación
+	T value;
+	friend class HashTabla; //en observación
 public:
-	HashEntidad(string key, G value) {
+	HashEntidad(string key, T value) {
 		this->key = key;
 		this->value = value;
 	}
 	string getKey() { return key; }
-	G getValue() { return value; }
+	T getValue() { return value; }
 };
-/*
-class HashTabla {
-private:
-	HashEntidad<int>** tabla;
-	int numElementos;
-	int tamaño_tabla;
-public:
-	HashTabla(int TABLE_SIZE) {
-		this->tamaño_tabla = TABLE_SIZE;
-		tabla = new HashEntidad<int> *[TABLE_SIZE];
-		for (int i = 0; i < TABLE_SIZE; ++i) {
-			tabla[i] = nullptr;
-		}
-		numElementos = 0;
-	}
-	~HashTabla() {
-		for (int i = 0; i < tamaño_tabla; ++i) {
-			if (tabla[i] != nullptr) {
-				delete tabla[i];
-			}
-		}
-		delete[] tabla;
-	}
-	void insertar(int key, int value) {
-		int base, step, hash;
-		if (numElementos == tamaño_tabla)return;
-		base = key % tamaño_tabla;
-		hash = base;
-		step = 0;
-		while (tabla[hash] != nullptr) {
-			hash = (base + step) % tamaño_tabla;
-			step++;
-		}
-		tabla[hash] = new HashEntidad<int>(key, value);
-		numElementos++;
-	}
-	int size() {
-		return tamaño_tabla;
-	}
-	int size_actual() {
-		return numElementos;
-	}
-	int buscar(int llave) {
-		int step = 0;
-		int i = llave % tamaño_tabla;
-		int base = llave % tamaño_tabla;
-		while (true) {
-			if (tabla[i] == nullptr) {
-				return -1;
-			}
-			else if (tabla[i]->getKey() == llave) {
-				return i;
-			}
-			else step++;
-			i = (base + step) % tamaño_tabla;
-		}
-	}
 
-
-	void imprimirTablaHash(int* keys) {
-		cout << "Value   " << "Keys" << endl;
-		for (int i = 0; i < tamaño_tabla; ++i) {
-			cout << buscar(keys[i]) << " : " << keys[i] << endl;
-		}
-	}
-};
-*/
 template<class G>
-class HashTabla {
+class HashTablita {
 	array<list<HashEntidad<G>>, 10> tabla;
 	function<void(G)> print_conditions;
-	int size = 10; //tamaño del arr
+	int tamano = 10; //tamaño del arr
 	int numElm = 0; //numero de elementos
 public:
-	HashTabla(){}
-	~HashTabla(){}
+	HashTablita(){}
+	~HashTablita(){}
 	void lambda_initializers(function<void(G)> print_conditions){ //inicializar antes de que
 		this->print_conditions = print_conditions;                //usemos el hashtable, porque no es
 	}															  //un puntero que se inicializa
@@ -125,8 +59,8 @@ public:
 		}
 	}
 
-	int size() { return size; }
-	int numElm() { return numElm; }
+	int get_tamano() { return tamano; }
+	int getNumElm() { return numElm; }
 	//TO-DO: función eliminar
 
 };

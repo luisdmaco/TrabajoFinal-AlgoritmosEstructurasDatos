@@ -20,8 +20,8 @@ private:
 	int tamaño;
 
 public:
-	Tree(function<bool(G, G)> comparar, function<void(G)> mostrar) : comparar(comparar), mostrar(mostrar) {
-		root = nullptr; tamaño = 0;
+	Tree(function<bool(G, G)> comparar, function<void(G)> mostrar) : comparar(comparar), mostrar(mostrar) { 
+		root = nullptr; tamaño = 0; 
 	}
 	~Tree() {}
 
@@ -34,7 +34,7 @@ public:
 			_insert(e, tmp->r);
 		else _insert(e, tmp->l);
 	}
-
+	
 	int size() {
 		return tamaño;
 	}
@@ -46,7 +46,7 @@ public:
 	}
 
 	void _enOrden(Nodo<G>* tmp) {
-		if (tmp == nullptr)return;
+		if ([=]() {return tmp == nullptr; }())return;
 		_enOrden(tmp->l);
 		mostrar(tmp->data);
 		_enOrden(tmp->r);

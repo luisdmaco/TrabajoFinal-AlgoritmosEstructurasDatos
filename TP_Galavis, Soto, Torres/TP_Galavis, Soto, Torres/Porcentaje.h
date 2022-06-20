@@ -26,11 +26,10 @@ public:
 
 	void porcentificar(unsigned long long Sum_total) {
 		for (size_t i = 0; i <= 6; i++) {
-			if (Sum_total == 0) {
-				por.at(i) += (long double(vectorcito.at(i)) * 100.000000000) / long double(1);
-			}
-			else {
-				por.at(i) += (long double(vectorcito.at(i)) * 100.000000000) / long double(Sum_total);
+			if(Sum_total == 0){
+			por.at(i) += (long double(vectorcito.at(i))*100.000000000)/long double(1);
+			}else{
+				por.at(i) += (long double(vectorcito.at(i))*100.000000000)/long double(Sum_total);
 			}
 		}
 		print_porcentajes();

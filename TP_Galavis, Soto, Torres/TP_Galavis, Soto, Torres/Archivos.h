@@ -7,6 +7,7 @@
 #include "Porcentaje.h"
 #include "-Arbol.h"
 #include "Ordenamiento.h"
+#include "HashTable.h"
 
 using namespace std;
 using namespace System;
@@ -17,7 +18,8 @@ private:
 	Tree<Registro>* arbolRegistros;
 	vector<Registro> registros;
 	Porcentaje* porcentaje = new Porcentaje;
-	Ordenamiento* ordenamiento = new Ordenamiento;
+	Ordenamiento<int>* ordenamiento = new Ordenamiento<int>;
+	HashTablita<int> hash;
 
 	int n;
 	string Cuenta, Etiqueta, Moneda, Monto, Categoria;
@@ -29,17 +31,17 @@ public:
 		auto print = [](Registro s1) {cout << s1.toString() << '\n'; };
 		arbolRegistros = new Tree<Registro>([](Registro s1, Registro s2) {return s1.getCuenta() > s2.getCuenta(); }, print);
 	}
-	~Archivos() {}
+	~Archivos(){}
 
-	void lectura_Constante() {
+	void lectura_Constante(){
 		ifstream file;
 		long long total = 0;
 		file.open("gasto.txt", ios::in);
 		string skipline;
 		if (file.is_open()) {
 			getline(file, skipline);
-			while (!file.eof()) { //end of file
-				getline(file, Cuenta); cuenta = stoi(Cuenta);//string to int
+			while (!file.eof()) {
+				getline(file, Cuenta); cuenta = stoi(Cuenta);
 				getline(file, Etiqueta);
 				getline(file, Moneda); moneda = stoi(Moneda);
 				getline(file, Monto); monto = stoi(Monto);
@@ -47,48 +49,11 @@ public:
 
 				porcentaje->asignar_Monto(categoria, monto);
 				total += monto;
-
-				ordenamiento->insertar(cuenta, Etiqueta, moneda, monto, categoria);
 			}
 		}
 		file.close();
 		porcentaje->porcentificar(total);
 	}
-
-
-	void ordenar() {
-		int opt;
-		cout << "Escriba el tipo de ordenamiento que desea:" << endl;
-		cout << "   1. Ordenar segun el monto de manera descendente" << endl;
-		cout << "   2. Ordenar segun el monto de manera ascendente" << endl;
-		cout << "   3. Ordenar segun el tipo de cuenta de manera descendente" << endl;
-		cout << "   4. Ordenar segun el tipo de cuenta de manera ascendente" << endl;
-		cout << "   5. Ordenar segun la categoria de manera descendente" << endl;
-		cout << "   6. Ordenar segun la categoria de manera ascendente" << endl;
-		do { cin >> opt; } while (opt < 1 || opt > 6);
-
-		switch (opt) {
-		case 1:
-			ordenamiento->combSort_MenorMayor();
-			break;
-		case 2:
-			ordenamiento->combSort_MayorMenor();
-			break;
-		case 3:
-			ordenamiento->OrdShell_MenorMayor();
-			break;
-		case 4:
-			ordenamiento->OrdShell_MayorMenor();
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		}
-
-
-	}
-
 
 	void lectura(int op) {
 		ifstream file;
@@ -118,50 +83,57 @@ public:
 
 				r.insert(cuenta, Etiqueta, moneda, monto, categoria);
 				registros.push_back(r);
-				/*cout << r.getCuenta() << " " << r.getEtiqueta() << " " << r.getMoneda() << " " << r.getMonto() << " " << r.getCategoria() << endl;*/
 			}
 			file.close();
 		}
 		index();
 		arbolRegistros->enOrden();
 	}
-	void lectura_para_ordenamientos() {
+	void lectura_para_ordenamientos(int f, int opt) {
 		ifstream file;
-		int opt;
-
-		cout << "Escriba el tipo de ordenamiento que desea:" << endl;
-		cout << "   1. Ordenar segun el monto de manera descendente" << endl;
-		cout << "   2. Ordenar segun el monto de manera ascendente" << endl;
-		cout << "   3. Ordenar segun el tipo de cuenta de manera descendente" << endl;
-		cout << "   4. Ordenar segun el tipo de cuenta de manera ascendente" << endl;
-		cout << "   5. Ordenar segun la categoria de manera descendente" << endl;
-		cout << "   6. Ordenar segun la categoria de manera ascendente" << endl;
-
-		do {
-			cin >> opt;
-		} while (opt < 1 || opt > 6);
-
-		switch (opt) {
-		case 1:
+		if(f == 1){
 			file.open("ingreso.txt", ios::in);
-			break;
-		case 2:
+		}else{
 			file.open("gasto.txt", ios::in);
-			break;
 		}
-
-		string basura;
+		string skipline;
 		if (file.is_open()) {
-			getline(file, basura);
+			getline(file, skipline);
 			while (!file.eof()) {
 				getline(file, Cuenta); cuenta = stoi(Cuenta);
 				getline(file, Etiqueta);
 				getline(file, Moneda); moneda = stoi(Moneda);
 				getline(file, Monto); monto = stoi(Monto);
 				getline(file, Categoria); categoria = stoi(Categoria);
+
+				ordenamiento->insertar(cuenta, Etiqueta, moneda, monto, categoria);
 			}
-			file.close();
 		}
+		file.close();
+		switch (opt) {
+			case 1:
+				ordenamiento->combSort_MenorMayor();
+				break;
+			case 2:
+				ordenamiento->combSort_MayorMenor();
+				break;
+			case 3:
+				ordenamiento->OrdShell_MenorMayor();
+				break;
+			case 4:
+				ordenamiento->OrdShell_MayorMenor();
+				break;
+			case 5:
+				ordenamiento->heapSort_MenorMayor();
+				break;
+			//case 6:
+			//	ordenamiento->heapSort_MayorMenor();
+			//	break;
+		}
+	}
+
+	void imprimir_ordenar() {
+		ordenamiento->print();
 	}
 
 	void escritura(int op, short cuenta, string etiqueta, short moneda, long long monto, short categoria) {

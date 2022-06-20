@@ -41,9 +41,6 @@
     <ClInclude Include="Archivos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Lista.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Arreglo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,6 +66,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dataset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="-KDTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Convertir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="-Grafo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="-RBTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
