@@ -177,25 +177,20 @@ public:
 
 	//ht
 
-	bool hashEtiquetas_insert(string key, int value, int opt) {
+	void hashEtiquetas_insert(string key, int value, int opt) {
 		if (opt == 1) {
 			hashEtiquetasIng.insert(key, value);
-			return true;
+			
 		}if (opt == 2) {
 			hashEtiquetasGst.insert(key, value);
-			return true;
 		}
-		return false;
 	}
 
-	bool hashEtiquetas_buscar(string key, int opt) {
+	void hashEtiquetas_buscar(string key, int opt) {
 		if (opt == 1) {
 			hashEtiquetasIng.buscar(key);
-			return true;
 		}if (opt == 2) {
 			hashEtiquetasGst.buscar(key);
-			return true;
 		}
-		return false;
 	}
 };
